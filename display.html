@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Affichage des salles</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body class="page-display">
+  <div class="display-screen">
+    <header class="display-top">
+      <div>
+        <strong id="displayWeatherTemp">--°C</strong>
+        <span id="displayWeatherText">Hollerich</span>
+      </div>
+      <h1>CHANGEMENT DE SALLES</h1>
+      <div class="display-time"><span id="displayTime">--:--</span></div>
+    </header>
+
+    <main class="room-board">
+      <section class="column old-column">
+        <h2>ANCIENNE SALLE</h2>
+        <div id="oldRooms" class="room-list"></div>
+      </section>
+      <section class="arrow-column" id="arrows"></section>
+      <section class="column new-column">
+        <h2>NOUVELLE SALLE</h2>
+        <div id="newRooms" class="room-list"></div>
+      </section>
+    </main>
+
+    <footer class="display-footer">ⓘ Veuillez vous rendre dans votre nouvelle salle.</footer>
+  </div>
+  <script src="display.js"></script>
+</body>
+</html>

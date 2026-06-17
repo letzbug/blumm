@@ -1,0 +1,77 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Système d’affectation des salles</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body class="page-admin">
+  <header class="topbar">
+    <div class="top-item timebox">
+      <div class="icon circle-clock"></div>
+      <div><strong id="currentTime">--:--</strong><span id="currentDate">--</span></div>
+    </div>
+    <div class="top-item weatherbox">
+      <div id="weatherIcon" class="weather-icon">☁️</div>
+      <div><strong id="weatherTemp">--°C</strong><span id="weatherText">Météo en cours...</span></div>
+    </div>
+    <div class="top-item locationbox">
+      <div class="icon pin"></div>
+      <div><strong>Hollerich, Luxembourg</strong><span>Standpunkt Hollerich</span></div>
+    </div>
+  </header>
+
+  <main class="admin-shell">
+    <section class="hero-title">
+      <h1>SYSTÈME D’AFFECTATION DES SALLES</h1>
+      <p>Mise à jour des changements de salles pour aujourd’hui</p>
+    </section>
+
+    <section class="cards-grid">
+      <article class="card upload-card">
+        <h2>Mise à jour des salles</h2>
+        <label for="fileInput" class="dropzone" id="dropzone">
+          <div class="excel-icon">X</div>
+          <div>
+            <strong>Glissez votre fichier Excel ici</strong>
+            <span>ou cliquez pour sélectionner</span>
+          </div>
+          <small>Format attendu : Ancienne Salle | Nouvelle Salle | (Facultatif) Info</small>
+          <button type="button" class="small-button">Téléverser</button>
+        </label>
+        <input id="fileInput" type="file" accept=".xlsx,.xls,.csv" hidden />
+        <p class="status" id="uploadStatus">Aucun fichier chargé pour le moment.</p>
+      </article>
+
+      <article class="card preview-card">
+        <h2>Aperçu des données</h2>
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr><th>Ancienne Salle</th><th>Nouvelle Salle</th><th>Info (optionnel)</th></tr>
+            </thead>
+            <tbody id="previewBody"></tbody>
+          </table>
+        </div>
+      </article>
+
+      <article class="card launch-card">
+        <h2>Afficher le système d’affichage</h2>
+        <button id="openDisplay" class="display-button">
+          <span class="monitor-icon"></span>
+          <span>Ouvrir l’affichage<br>plein écran</span>
+        </button>
+        <p>Affichez les changements de salles sur un écran externe.</p>
+      </article>
+    </section>
+
+    <section class="display-preview">
+      <iframe src="display.html" title="Aperçu affichage"></iframe>
+    </section>
+  </main>
+
+  <script src="https://cdn.jsdelivr.net/npm/xlsx@0.18.5/dist/xlsx.full.min.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
