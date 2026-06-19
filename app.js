@@ -31,7 +31,7 @@ function getRows() {
 
 function renderPreview(rows) {
   els.previewBody.innerHTML = '';
-  rows.slice(0, 10).forEach(row => {
+  rows.slice(0, 13).forEach(row => {
     const tr = document.createElement('tr');
     tr.innerHTML = `<td>${escapeHtml(row.old)}</td><td>${escapeHtml(row.new)}</td><td>${escapeHtml(row.info || '')}</td>`;
     els.previewBody.appendChild(tr);
