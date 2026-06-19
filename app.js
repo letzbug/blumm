@@ -20,7 +20,7 @@ const els = {
 };
 
 function saveRows(rows) {
-  localStorage.setItem('roomChanges', JSON.stringify(rows.slice(0, 10)));
+  localStorage.setItem('roomChanges', JSON.stringify(rows.slice(0, 13)));
   window.dispatchEvent(new Event('storage'));
 }
 
