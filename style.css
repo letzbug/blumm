@@ -487,16 +487,12 @@ th{
   background:#071426;
 }
 
-.fullscreen-exit-hint{
+.fullscreen-exit-layer{
   position:fixed;
-  right:24px;
-  bottom:20px;
-  padding:8px 14px;
-  border-radius:999px;
-  background:rgba(0,0,0,.45);
-  color:white;
-  font-size:13px;
-  font-weight:700;
-  opacity:.55;
-  pointer-events:none;
+  inset:0;
+  z-index:100000;
+  border:0;
+  background:transparent;
+  cursor:pointer;
+  padding:0;
 }

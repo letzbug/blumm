@@ -88,10 +88,19 @@ els.openDisplay.addEventListener('click', async () => {
 
   overlay.innerHTML = `
     <iframe src="display.html" class="real-fullscreen-frame" title="Affichage plein écran"></iframe>
-    <div class="fullscreen-exit-hint">Cliquer pour quitter le plein écran</div>
+    <button type="button" class="fullscreen-exit-layer" aria-label="Quitter le plein écran"></button>
   `;
 
   document.body.appendChild(overlay);
+
+  const closeFullscreen = async () => {
+    try {
+      if (document.fullscreenElement) {
+        await document.exitFullscreen();
+      }
+    } catch {}
+    overlay.remove();
+  };
 
   try {
     await overlay.requestFullscreen();
@@ -99,14 +108,7 @@ els.openDisplay.addEventListener('click', async () => {
     console.warn('Fullscreen non disponible:', err);
   }
 
-  overlay.addEventListener('click', async () => {
-    try {
-      if (document.fullscreenElement) {
-        await document.exitFullscreen();
-      }
-    } catch {}
-    overlay.remove();
-  });
+  overlay.querySelector('.fullscreen-exit-layer').addEventListener('click', closeFullscreen);
 
   document.addEventListener('fullscreenchange', () => {
     if (!document.fullscreenElement && document.body.contains(overlay)) {
