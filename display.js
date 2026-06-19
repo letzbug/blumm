@@ -21,7 +21,7 @@ function getRows() {
 }
 
 function renderDisplay() {
-  const rows = getRows().slice(0, 10);
+  const rows = getRows().slice(0, 13);
   const oldRooms = document.getElementById('oldRooms');
   const newRooms = document.getElementById('newRooms');
   const arrows = document.getElementById('arrows');
