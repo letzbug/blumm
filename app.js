@@ -58,7 +58,7 @@ function mapRows(jsonRows) {
       new: newKey ? obj[newKey] : obj[keys[1]],
       info: infoKey ? obj[infoKey] : obj[keys[2]] || ''
     };
-  }).filter(r => r.old && r.new).slice(0, 10);
+  }).filter(r => r.old && r.new).slice(0, 13);
 }
 
 async function handleFile(file) {
